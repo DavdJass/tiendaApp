@@ -1,0 +1,10 @@
+[project]
+name = "puntoventa"
+version = "0.1.0"
+dependencies = [
+    "fastapi",
+    "uvicorn"
+]
+
+[project.scripts]
+start = "puntoventa.main:app"
