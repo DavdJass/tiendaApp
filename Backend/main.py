@@ -114,3 +114,8 @@ def crear_detalle_venta(detalle: schemas.DetalleVentaCreate, db: Session = Depen
 @app.get("/detalleventas/", response_model=list[schemas.DetalleVenta])
 def listar_detalles_venta(db: Session = Depends(get_db)):
     return db.query(models.DetalleVenta).all()
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Usa el puerto de Render o 8000 por defecto
+    uvicorn.run(app, host="0.0.0.0", port=port)  # ¡Escucha en 0.0.0.0!gi
